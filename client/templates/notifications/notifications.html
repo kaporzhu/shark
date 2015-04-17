@@ -1,0 +1,26 @@
+<template name="notifications">
+    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+        <span class="glyphicon glyphicon-envelope"></span>
+        {{#if notificationUnreadCount}}
+            <span class="badge badge-inverse">{{notificationUnreadCount}}</span>
+        {{/if}}
+    </a>
+    <ul class="dropdown-menu">
+        {{#if notificationCount}}
+            {{#each notifications}}
+                {{> notificationItem}}
+            {{/each}}
+        {{else}}
+            <li><a>没有通知</a></li>
+        {{/if}}
+    </ul>
+</template>
+
+<template name="notificationItem">
+    <li>
+        <a href="{{url}}" class="{{#if unread}}unread{{/if}}">
+            <small class="pull-right lightgray">{{dateFromNow submitted}}</small>
+            <small class="content">{{content}}</small>
+        </a>
+    </li>
+</template>

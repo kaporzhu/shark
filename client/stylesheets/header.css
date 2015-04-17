@@ -1,0 +1,75 @@
+#header {
+  border-bottom: 1px solid #e8e8e8;
+  background-color: #fff;
+  border-radius: 0;
+  color: #9D9D9D;
+  min-height: 0; }
+  #header .navbar-brand {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    height: auto; }
+  #header .dropdown-menu {
+    border-bottom: 1px solid #e8e8e8;
+    border-left: 1px solid #e8e8e8;
+    border-right: 1px solid #e8e8e8;
+    border-top: none;
+    margin-top: 7px;
+    border-radius: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    min-width: 250px; }
+    #header .dropdown-menu a {
+      color: #777; }
+    #header .dropdown-menu a:hover {
+      color: #000; }
+    #header .dropdown-menu a.unread {
+      color: #000; }
+    #header .dropdown-menu input, #header .dropdown-menu input:focus {
+      border: 1px solid #ccc;
+      box-shadow: inset 0 1px 2px #eee; }
+  #header .navbar-nav > li > a {
+    padding-top: 9px;
+    padding-bottom: 0px;
+    font-size: 1em; }
+    #header .navbar-nav > li > a:hover, #header .navbar-nav > li > a:focus {
+      background-color: #fff;
+      color: #000; }
+  #header #login-dropdown-list > a {
+    padding-top: 7px; }
+  #header #login-dropdown-list > .dropdown-menu {
+    margin-top: 9px;
+    padding: 15px; }
+  #header .dropdown-toggle > a:hover, #header .dropdown-toggle > a:focus {
+    background-color: #fff;
+    color: #000; }
+  #header .open > a, #header .open > a:hover, #header .open > a:focus {
+    background-color: #fff;
+    color: #000; }
+
+#favorites .glyphicon {
+  cursor: pointer;
+  color: #FF6C6C;
+  font-size: 1.1em; }
+  #favorites .glyphicon:hover {
+    color: red; }
+#favorites li .content {
+  padding-right: 60px; }
+
+#notifications .glyphicon {
+  color: #3DCE3D;
+  font-size: 1.1em; }
+  #notifications .glyphicon:hover {
+    color: #33B332; }
+#notifications .badge {
+  background-color: red;
+  padding: 0 3px;
+  position: absolute;
+  top: 15px;
+  right: 5px;
+  line-height: 1.1; }
+#notifications .read {
+  color: #B3B3B3; }
+#notifications li .content {
+  padding-right: 60px; }
+
+/*# sourceMappingURL=header.css.map */

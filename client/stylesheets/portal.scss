@@ -1,0 +1,77 @@
+#home {
+  margin-top: 45px;
+  .title-leader {
+    font-size: 19px;
+  }
+  #hotest-posts,
+  #savage-posts {
+    li {
+      width: 285px;
+      .post {
+        display: block;
+        background-color: white;
+        color: #777;
+        .img {
+          width: 100%;
+          height: 450px;
+        }
+        .desp {
+          padding: 5px 8px 0 8px;
+          height: 55px;
+          margin: 0;
+        }
+        .info {
+          background-color: #F2F2F2;
+          span {
+            display: inline-block;
+            line-height: 15px;
+            vertical-align: top;
+          }
+          .glyphicon-heart {
+            color: #FF6C6C;
+          }
+          .glyphicon-comment {
+            color: #3DCE3D;
+          }
+          .count,
+          .date {
+            font-size: 1em;
+            color: #7d7d7d;
+          }
+        }
+      }
+    }
+  }
+}
+
+#approve-withdraw {
+  padding-top: 15px;
+  background-color: white;
+  margin-top: 45px;
+  .list-group-item {
+    border: none;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 0;
+  }
+}
+
+#create-post-form {
+  margin-top: 45px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding-top: 20px;
+}
+
+
+#withdraw {
+  background-color: white;
+  margin-top: 45px;
+  padding: 15px 10px 10px 10px;
+  input {
+    width: 200px;
+  }
+  li {
+    background: url(/image/clothing-border-bg.png) repeat-x center bottom;
+    padding: 3px;
+  }
+}

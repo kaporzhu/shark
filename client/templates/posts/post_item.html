@@ -1,0 +1,241 @@
+<template name="postItem">
+    <div id="post-item" class="col-md-12">
+        <div class="row">
+            <div class="col-md-1 slide-nav hidden-sm hidden-xs">
+                {{> slideNav overview=overview images=images}}
+            </div>
+            <div class="col-md-5 img-zoom-view hidden-sm hidden-xs">
+                <img class="img-responsive" src="{{overview}}@!large" />
+                <div class="cover">
+                    <img src="/image/ajax-loader-large.gif" />
+                </div>
+            </div>
+            <div class="col-md-5 img-zoom-view-list visible-sm-block visible-xs-block">
+                {{#each images}}
+                    <img class="img-responsive" src="/image/ajax-loader-large.gif" data-src="{{url}}@!large" /><br /><br />
+                {{/each}}
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-sm-12 post-desc">
+                        <blockquote>
+                            <p>{{description}}</p>
+                        </blockquote>
+                        <div class="actions">
+                            <small>发表于{{dateFromNow submitted}}</small>&nbsp;&nbsp;
+                            <span title="已收藏" class="glyphicon glyphicon-heart login-required like {{likedClass}}"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <ul class="list-unstyled col-sm-12 clothings">
+                        {{#each clothings}}
+                            <li>
+                                <a class="btn btn-sm pull-right" target="_blank" href="{{alimamaUrl}}">购买</a>
+                                <div class="product-img pull-left" style="background: url({{img}}@!small) 50% 50% no-repeat;"></div>
+                                <p class="product-desc">{{name}}</p>
+                                <p class="product-info"><span>￥{{price}}</span></p>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="post-comments">
+        {{#if myComment}}
+            <div class="col-md-12 my-comment">
+                <h4><span class="title-leader"></span>我的申请</h4>
+                <hr />
+                <ul class="list-unstyled">
+                    {{> commentItem myComment}}
+                </ul>
+            </div>
+        {{else}}
+            <div class="col-md-12 my-comment">
+                <h4><span class="title-leader"></span>我已经买了，上传效果图申请邮费奖励</h4>
+                <hr />
+                {{> commentForm}}
+            </div>
+        {{/if}}
+        {{#if hasComment}}
+        <div class="col-md-12 other-comments">
+            <h4><span class="title-leader"></span>别人的申请</h4>
+            <div class="checkbox selector">
+                <label><input type="checkbox" checked value="reward">有返现的申请</label>
+                {{#if showProcessingComment}}
+                    <label><input type="checkbox" value="processing" checked>等待审核</label>
+                {{else}}
+                    <label><input type="checkbox" value="processing">等待审核</label>
+                {{/if}}
+                <label><input type="checkbox" value="reject">被拒绝的申请</label>
+            </div>
+            <hr />
+            <ul class="list-unstyled comments reward">
+                {{#each comments 'reward'}}
+                    {{> commentItem}}
+                {{/each}}
+            </ul>
+            <ul class="list-unstyled comments processing {{#if showProcessingComment}}{{else}}hidden{{/if}}">
+                {{#each comments}}
+                    {{> commentItem}}
+                {{/each}}
+            </ul>
+            <ul class="list-unstyled comments reject hidden">
+                {{#each comments 'reject'}}
+                    {{> commentItem}}
+                {{/each}}
+            </ul>
+        </div>
+        {{/if}}
+    </div>
+</template>
+
+<template name="slideNav">
+    <a class="nav-btn nav-prev" data-type="prev" href="javascript:;"></a>
+    <div class="nav-list">
+        <ul class="list-unstyled">
+            {{#each images}}
+            <li data-img="{{url}}@!large">
+                <img src="{{url}}@!small" />
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    <a class="nav-btn nav-next" data-type="next" href="javascript:;"></a>
+</template>
+
+<template name="commentItem">
+    <li class="row comment {{#if hidden}}hidden{{/if}}">
+        <div class="col-sm-3">
+            <p class="content"><pre>{{content}}</pre></p>
+            <p>
+                <span>{{author}}</span>
+                <small>{{dateFromNow submitted}}</small>&nbsp;&nbsp;
+                <span><b class="like login-required" data-id="{{_id}}">oo</b>&nbsp;<small>{{like}}</small></span>
+                <span><b class="dislike login-required" data-id="{{_id}}">xx</b>&nbsp;<small>{{dislike}}</small></span>
+                {{#if showRewardForm }}
+                    <a class="reward-btn" href="javascript:;">奖励</a>
+                    <a class="reject-btn" href="javascript:;">拒绝</a>
+                {{/if}}
+                {{#if currentUser.is_superuser}}
+                    <a class="del-btn" href="javascript:;">删除</a>
+                {{/if}}
+                {{#if isMyComment}}
+                    {{#if reject}}
+                        <a class="edit-btn" href="javascript:;">重新申请</a>
+                    {{else}}
+                        <a class="edit-btn" href="javascript:;">修改</a>
+                    {{/if}}
+                {{/if}}
+            </p>
+        </div>
+        <div class="col-sm-8">
+            {{#each imgs}}
+                <a class="img" data-picked="{{picked}}" data-url="{{url}}" data-comment="{{../_id}}" target="_blank" data-title="{{../author}}: {{../content}}" href="{{url}}@!large">
+                    <img height="300" src="/image/ajax-loader-large.gif" data-src="{{url}}@!medium" />
+                </a>
+            {{/each}}
+        </div>
+        {{#if reward}}
+            <small class="marker marker-reward visible-lg-inline-block visible-md-inline-block" title="奖励{{reward.amount}}元">{{reward.amount}}元</small>
+            <small class="sm-marker visible-sm-block visible-xs-block">奖励{{reward.amount}}元</small>
+        {{/if}}
+        {{#if reject}}
+            <div class="marker marker-reject visible-lg-inline-block visible-md-inline-block" title="申请被拒绝：{{reject.reason}}"><small>{{reject.reason}}</small></div>
+            <div class="sm-marker visible-sm-block visible-xs-block"><small>申请被拒绝：{{reject.reason}}</small></div>
+        {{/if}}
+        {{#if isProcessing}}
+            <div class="marker marker-processing visible-lg-inline-block visible-md-inline-block" title="正在审核申请..."></div>
+            <div class="sm-marker visible-sm-block visible-xs-block"><small>正在审核申请...</small></div>
+        {{/if}}
+    </li>
+</template>
+
+<template name="commentForm">
+    <form id="applyPostageForm" class="form-horizontal">
+        <div class="form-group">
+            <div class="col-sm-12 green">(●—●) 请上传竖着的长方形样式的照片</div>
+            <ul class="col-sm-12 list-inline upload-imgs">
+                <li class="required">
+                    <span class="btn fileinput-button">
+                        <input type="file" name="files[]" data-form-data='{"bucket": "shark-comment"}'>
+                    </span>
+                    <div class="plus">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        <span>正面全身照</span>
+                    </div>
+                </li>
+                <li class="required">
+                    <span class="btn fileinput-button">
+                        <input type="file" name="files[]" data-form-data='{"bucket": "shark-comment"}'>
+                    </span>
+                    <div class="plus">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        <span>侧面全身照</span>
+                    </div>
+                </li>
+                <li class="required">
+                    <span class="btn fileinput-button">
+                        <input type="file" name="files[]" data-form-data='{"bucket": "shark-comment"}'>
+                    </span>
+                    <div class="plus">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        <span>背面全身照</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="form-group">
+            <div class="col-md-8">
+                <textarea placeholder="说几句？" rows="6" name="content" class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-6">
+                <button type="button" id="submit-comment-btn" class="btn login-required">申请</button>
+            </div>
+        </div>
+    </form>
+</template>
+
+<template name="commentEditForm">
+    <div class="modal fade" id="edit-comment">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <ul class="col-sm-12 list-inline imgs">
+                                {{#each comment.imgs}}
+                                    <li>
+                                        <img height="80" src="{{url}}@!small" />
+                                        <span class="glyphicon glyphicon-remove del-img-btn"></span>
+                                    </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12 upload">
+                                <span class="btn btn-success fileinput-button">
+                                    <i class="glyphicon glyphicon-plus"></i>
+                                    <span>上传照片...</span>
+                                    <input class="upload-img" type="file" name="files[]" multiple data-form-data='{"bucket": "shark-comment"}'>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <textarea placeholder="说几句？" rows="6" name="content" class="form-control">{{comment.content}}</textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-red" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn save">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

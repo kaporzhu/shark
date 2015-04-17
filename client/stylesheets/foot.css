@@ -1,0 +1,48 @@
+#foot {
+  background-color: white;
+  padding-top: 10px;
+  margin-top: 40px; }
+  #foot a {
+    color: #333; }
+  #foot li:first-child {
+    padding-bottom: 5px; }
+  #foot .icon-sns a {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-left: 8px;
+    position: relative; }
+  #foot .icon-sns .icon-qq {
+    background: url(/image/icon-common.png) 1px -121px; }
+    #foot .icon-sns .icon-qq:hover span {
+      display: inline-block; }
+    #foot .icon-sns .icon-qq span {
+      display: none;
+      position: absolute;
+      width: 135px;
+      height: 88px;
+      text-align: left;
+      border: 1px solid lightgray;
+      background-color: #eee;
+      z-index: 3;
+      bottom: 18px;
+      left: -55px;
+      padding: 10px;
+      cursor: auto; }
+  #foot .icon-sns .icon-wechat {
+    background: url(/image/icon-common.png) 1px -102px; }
+    #foot .icon-sns .icon-wechat:hover img {
+      display: inline-block; }
+    #foot .icon-sns .icon-wechat img {
+      display: none;
+      position: absolute;
+      z-index: 3;
+      bottom: 18px;
+      left: -46px;
+      border: 1px solid lightgray;
+      padding: 2px;
+      background-color: #eee; }
+  #foot .icon-sns .icon-weibo {
+    background: url(/image/icon-common.png) -2px -5px; }
+
+/*# sourceMappingURL=foot.css.map */

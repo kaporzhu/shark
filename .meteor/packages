@@ -15,3 +15,4 @@ sacha:spin
 npm-container
 service-configuration
 meteorhacks:npm
+momentjs:moment

@@ -1,0 +1,63 @@
+#foot {
+  background-color: white;
+  padding-top: 10px;
+  margin-top: 40px;
+  a {
+    color: #333;
+  }
+  li:first-child {
+    padding-bottom: 5px;
+  }
+  .icon-sns {
+    a {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      margin-left: 8px;
+      position: relative;
+    }
+    .icon-qq {
+      background: url(/image/icon-common.png) 1px -121px;
+      &:hover {
+        span {
+          display: inline-block;
+        }
+      }
+      span {
+        display: none;
+        position: absolute;
+        width: 135px;
+        height: 88px;
+        text-align: left;
+        border: 1px solid lightgray;
+        background-color: #eee;
+        z-index: 3;
+        bottom: 18px;
+        left: -55px;
+        padding: 10px;
+        cursor: auto;
+      }
+    }
+    .icon-wechat {
+      background: url(/image/icon-common.png) 1px -102px;
+      &:hover {
+        img {
+          display: inline-block;
+        }
+      }
+      img {
+        display: none;
+        position: absolute;
+        z-index: 3;
+        bottom: 18px;
+        left: -46px;
+        border: 1px solid lightgray;
+        padding: 2px;
+        background-color: #eee;
+      }
+    }
+    .icon-weibo {
+      background: url(/image/icon-common.png) -2px -5px;
+    }
+  }
+}

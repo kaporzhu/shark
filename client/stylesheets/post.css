@@ -1,0 +1,222 @@
+#post-item {
+  background-color: white;
+  margin-bottom: 15px;
+  margin-top: 45px; }
+  #post-item .img-zoom-view {
+    height: 627px;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-right: 1px solid #D6D6D6;
+    position: relative; }
+    #post-item .img-zoom-view img {
+      max-height: 100%;
+      display: inline-block; }
+    #post-item .img-zoom-view .cover {
+      display: none;
+      position: absolute;
+      width: 97%;
+      height: 100%;
+      filter: Alpha(Opacity=50);
+      opacity: 0.5;
+      top: 0;
+      background-color: white; }
+      #post-item .img-zoom-view .cover img {
+        margin-top: 30%; }
+    #post-item .img-zoom-view .img {
+      height: 630px;
+      width: 400px;
+      display: inline-block; }
+  #post-item .img-zoom-view-list img {
+    width: 100%; }
+  #post-item .clothings > li {
+    background: url(/image/clothing-border-bg.png) repeat-x center bottom;
+    overflow: hidden;
+    height: 65px;
+    margin-top: 5px; }
+    #post-item .clothings > li .product-desc {
+      padding-left: 13px;
+      margin-top: 5px;
+      color: #666;
+      font-size: 1em;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
+    #post-item .clothings > li .product-info {
+      padding-left: 70px;
+      margin-top: 5px; }
+      #post-item .clothings > li .product-info span {
+        color: #f40; }
+  #post-item .product-img {
+    width: 58px;
+    height: 58px; }
+  #post-item .overview {
+    cursor: pointer; }
+  #post-item .post-desc {
+    padding-top: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px; }
+    #post-item .post-desc blockquote {
+      border: none;
+      margin: 3px 0 10px;
+      padding: 0 20px;
+      font-size: 1.2em;
+      line-height: 1.7em;
+      background: url(/image/quotel.gif) no-repeat 2px 4px; }
+    #post-item .post-desc p {
+      display: inline;
+      padding: 0 18px 0 0;
+      background: url(/image/quoter.gif) no-repeat right bottom;
+      word-wrap: break-word; }
+  #post-item .actions {
+    color: #aaa;
+    padding: 0 0 10px 20px; }
+    #post-item .actions .like {
+      cursor: pointer;
+      font-size: 1.3em; }
+  #post-item .clothings {
+    padding: 10px 20px; }
+  #post-item .slide-nav {
+    padding-top: 10px;
+    padding-bottom: 10px; }
+    #post-item .slide-nav li {
+      margin-top: 3px;
+      margin-bottom: 3px;
+      cursor: pointer;
+      float: left;
+      position: relative;
+      width: 100%;
+      text-align: center; }
+      #post-item .slide-nav li img {
+        width: 63px;
+        margin: 1px; }
+    #post-item .slide-nav .nav-list {
+      height: 543px;
+      overflow: hidden; }
+      #post-item .slide-nav .nav-list li.selected {
+        border: 1px solid #f40; }
+    #post-item .slide-nav .nav-btn {
+      height: 27px;
+      display: block;
+      background: url(/image/slide-btns-bg.png) no-repeat; }
+    #post-item .slide-nav .nav-prev {
+      background-position: -5px 0; }
+    #post-item .slide-nav .nav-next {
+      background-position: -5px -60px;
+      margin-top: 10px; }
+    #post-item .slide-nav .nav-next-disabled {
+      cursor: not-allowed;
+      background-position: -5px -90px; }
+    #post-item .slide-nav .nav-prev-disabled {
+      cursor: not-allowed;
+      background-position: -5px -30px; }
+
+#edit-comment .imgs li {
+  position: relative; }
+#edit-comment .imgs .del-img-btn {
+  cursor: pointer;
+  color: red;
+  position: absolute;
+  right: 5px; }
+
+#applyPostageForm .imgs li {
+  position: relative; }
+#applyPostageForm .imgs .del-img-btn {
+  cursor: pointer;
+  color: red;
+  position: absolute;
+  right: 5px; }
+#applyPostageForm .upload-imgs li {
+  position: relative;
+  padding: 5px;
+  width: 110px;
+  text-align: center; }
+  #applyPostageForm .upload-imgs li:not(.loading):hover .fileinput-button, #applyPostageForm .upload-imgs li.loaded:hover .fileinput-button {
+    background: url(/image/person-fuzzy.png) no-repeat center #F5F5F5; }
+  #applyPostageForm .upload-imgs li:not(.loading):hover .plus, #applyPostageForm .upload-imgs li.loaded:hover .plus {
+    display: block; }
+  #applyPostageForm .upload-imgs li.loading .fileinput-button {
+    background: url(/image/ajax-loader-large.gif) no-repeat center #F5F5F5; }
+  #applyPostageForm .upload-imgs li.loaded .fileinput-button, #applyPostageForm .upload-imgs li.loaded .plus {
+    display: none; }
+  #applyPostageForm .upload-imgs li .fileinput-button {
+    height: 150px;
+    border: none;
+    padding: 0;
+    background: url(/image/person.png) no-repeat center #F5F5F5; }
+  #applyPostageForm .upload-imgs li .del-img-btn {
+    position: absolute;
+    color: red;
+    top: 5px;
+    right: 5px;
+    cursor: pointer; }
+  #applyPostageForm .upload-imgs li .plus {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    display: none;
+    cursor: pointer;
+    font-weight: bold; }
+    #applyPostageForm .upload-imgs li .plus .glyphicon {
+      display: block;
+      color: #E0E0E0;
+      font-size: 4em;
+      padding-bottom: 25px;
+      padding-left: 10px; }
+
+#post-comments .title-leader {
+  font-size: 16px; }
+#post-comments .other-comments {
+  background-color: #fff;
+  padding-top: 5px; }
+#post-comments b.like, #post-comments b.dislike {
+  cursor: pointer;
+  color: blue; }
+#post-comments .comment {
+  position: relative;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee; }
+  #post-comments .comment .content {
+    font-size: 1.1em; }
+  #post-comments .comment a.img img {
+    margin: 0 5px 5px 0; }
+  #post-comments .comment .sm-marker {
+    display: block;
+    padding: 5px 15px;
+    color: red; }
+  #post-comments .comment .marker {
+    color: red;
+    display: inline-block;
+    width: 40px;
+    height: 63px;
+    top: 5px;
+    right: 10px;
+    padding-top: 10px;
+    position: absolute;
+    text-align: center; }
+  #post-comments .comment .marker-reward {
+    background: url(/image/reward.png) no-repeat; }
+  #post-comments .comment .marker-processing {
+    background: url(/image/processing.png) no-repeat; }
+  #post-comments .comment .marker-reject {
+    background: url(/image/reject.png) no-repeat right top;
+    width: 200px;
+    height: auto;
+    padding-top: 40px;
+    right: 15px;
+    text-align: right; }
+#post-comments .comment.last {
+  border-bottom: none; }
+#post-comments .my-comment {
+  background-color: white;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  padding-top: 5px; }
+  #post-comments .my-comment .comment {
+    border-bottom: none; }
+
+#posts {
+  margin-top: 45px; }
+
+/*# sourceMappingURL=post.css.map */

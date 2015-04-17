@@ -1,5 +1,10 @@
 Template.postsList.helpers({
-    posts: function () {
-        return Posts.find({}, {sort: {submitted: -1}});
+    likedClass: function() {
+        var userId = Meteor.userId();
+        if (userId && _.include(this.likers, userId)) {
+            return 'liked';
+        } else {
+            return '';
+        }
     }
 });

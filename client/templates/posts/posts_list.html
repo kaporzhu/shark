@@ -1,7 +1,14 @@
 <template name="postsList">
-    <div class="posts">
+    <div id="posts">
         {{#each posts}}
-        {{> postItem}}
+            <p><span class="glyphicon glyphicon-heart like {{likedClass}}"></span><b>{{like}}</b>&nbsp;<a href="{{pathFor 'post.item'}}">{{title}}</a>&nbsp;&nbsp;<small>{{dateFromNow submitted}}</small></p>
         {{/each}}
+        {{#if nextPath}}
+            <a class="load-more" href="{{nextPath}}">加载更多</a>
+        {{else}}
+            {{#unless ready}}
+                {{> spinner}}
+            {{/unless}}
+        {{/if}}
     </div>
 </template>

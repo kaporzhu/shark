@@ -1,34 +1,103 @@
 <template name="postCreate">
-    <form class="form-horizontal">
+    <form id="create-post-form" class="form-horizontal">
         <div class="form-group">
-            <label class="col-md-2 control-label">标题</label>
-
+            <span class="col-md-2 control-label">标题</span>
             <div class="col-md-10">
-                <input type="text" class="form-control" name="title"/>
+                <input class="form-control" name="title" />
             </div>
         </div>
         <div class="form-group">
-            <label class="col-md-2 control-label sr-only">上传文件</label>
-
+            <span class="col-md-2 control-label">点评</span>
             <div class="col-md-10">
-                <!-- The fileinput-button span is used to style the file input field as button -->
+                <textarea class="form-control" name="description"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <span class="col-md-2 control-label">概览</span>
+            <div class="col-md-10 upload">
                 <span class="btn btn-success fileinput-button">
                     <i class="glyphicon glyphicon-plus"></i>
-                    <span>Select files...</span>
-                    <!-- The file input field used as target for the file upload widget -->
-                    <input id="fileupload" type="file" name="files[]" multiple>
+                    <span>上传文件...</span>
+                    <input class="upload-img" type="file" name="files[]" data-form-data='{"bucket": "shark-post"}'>
                 </span>
-                <img class="hidden" id="ajax-loading" src="/image/ajax-loader.gif" />
-                <br>
-                <br>
-                <!-- The container for the uploaded files -->
-                <div id="files" class="files"></div>
+                <img class="hidden ajax-loading" src="/image/ajax-loader.gif" />
+                <input class="form-control img" name="overview" type="hidden" />
+            </div>
+        </div>
+        <div class="form-group">
+            <span class="col-md-2 control-label">服装</span>
+            <div class="col-md-10">
+                {{> addClothing}}
+                <div class="row">
+                    <div class="text-right col-sm-6 col-sm-offset-2">
+                        <button id="add-clothing-btn" type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-default">添加</button>
+                <button id="create-post-btn" type="button" class="btn btn-primary">添加</button>
             </div>
         </div>
     </form>
+</template>
+
+<template name="addClothing">
+    <div class="clothing">
+        <div class="row">
+            <div class="col-sm-2 control-label">类型</div>
+            <div class="col-sm-6">
+                <select class="form-control" name="type">
+                    <option value="shoe">鞋子</option>
+                    <option value="sock">袜子</option>
+                    <option value="pants">裤子</option>
+                    <option value="t-shirt">短袖</option>
+                    <option value="long-t-shirt">长袖</option>
+                    <option value="shirt">衬衫</option>
+                    <option value="sweater">线衫</option>
+                    <option value="coat">外套</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 control-label">名称</div>
+            <div class="col-sm-6">
+                <input class="form-control" name="name" type="text" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 control-label">价格</div>
+            <div class="col-sm-6">
+                <input class="form-control" name="price" type="text" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 control-label">图片</div>
+            <div class="col-sm-6 upload">
+                <span class="btn btn-success fileinput-button">
+                    <i class="glyphicon glyphicon-plus"></i>
+                    <span>上传文件...</span>
+                    <input class="upload-img" type="file" name="files[]" data-form-data='{"bucket": "shark-post"}'>
+                </span>
+                <img class="hidden ajax-loading" src="/image/ajax-loader.gif" />
+                <input class="form-control img" name="img" type="hidden" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 control-label">淘宝URL</div>
+            <div class="col-sm-6">
+                <input class="form-control" name="taobao-url" type="text" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 control-label">阿里妈妈URL</div>
+            <div class="col-sm-6">
+                <input class="form-control" name="alimama-url" type="text" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8"><hr></div>
+        </div>
+    </div>
 </template>

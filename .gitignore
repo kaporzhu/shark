@@ -2,3 +2,5 @@
 .meteor/meteorite
 .idea
 __init__.js
+*.map
+packages/

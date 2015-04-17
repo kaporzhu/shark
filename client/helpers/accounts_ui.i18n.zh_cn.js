@@ -33,7 +33,7 @@ accountsUIBootstrap3.map("zh_cn", {
                 create: "新建",
                 signIn: "登录",
                 forgot: "忘记密码？",
-                createAcc: "新建用户"
+                createAcc: "注册"
         },
         forgotPasswordForm: {
                 email: "邮箱",

@@ -4,5 +4,5 @@ ownsDocument = function(userId, doc) {
 };
 
 isSuperuser = function() {
-    return Meteor.user.profile.is_superuser;
+    return Meteor.user() && Meteor.user().is_superuser;
 }

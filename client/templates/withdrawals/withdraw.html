@@ -1,0 +1,24 @@
+<template name="withdraw">
+    <div id="withdraw">
+        <p>账户余额：{{defaultIfUndefined currentUser.balance 0}}元</p>
+        {{#if canWithdraw}}
+        <form class="form-inline">
+            <div class="form-group">
+                <span>提现到支付宝账号:</span>
+                <input type="text" class="form-control input-sm" value="{{currentUser.profile.alipay}}" />
+                <button type="button" class="btn btn-default btn-sm">提现</button>
+            </div>
+        </form>
+        {{/if}}
+        <hr />
+        <ul class="list-unstyled">
+        {{#each withdrawals}}
+            <li>
+                <small>{{formatDate submitted "MM/DD HH:mm"}}</small>
+                <label>提现{{amount}}元。</label>
+                <span>{{statusMessage}}</span>
+            </li>
+        {{/each}}
+        </ul>
+    </div>
+</template>

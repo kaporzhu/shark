@@ -1,0 +1,68 @@
+#home {
+  margin-top: 45px; }
+  #home .title-leader {
+    font-size: 19px; }
+  #home #hotest-posts li,
+  #home #savage-posts li {
+    width: 285px; }
+    #home #hotest-posts li .post,
+    #home #savage-posts li .post {
+      display: block;
+      background-color: white;
+      color: #777; }
+      #home #hotest-posts li .post .img,
+      #home #savage-posts li .post .img {
+        width: 100%;
+        height: 450px; }
+      #home #hotest-posts li .post .desp,
+      #home #savage-posts li .post .desp {
+        padding: 5px 8px 0 8px;
+        height: 55px;
+        margin: 0; }
+      #home #hotest-posts li .post .info,
+      #home #savage-posts li .post .info {
+        background-color: #F2F2F2; }
+        #home #hotest-posts li .post .info span,
+        #home #savage-posts li .post .info span {
+          display: inline-block;
+          line-height: 15px;
+          vertical-align: top; }
+        #home #hotest-posts li .post .info .glyphicon-heart,
+        #home #savage-posts li .post .info .glyphicon-heart {
+          color: #FF6C6C; }
+        #home #hotest-posts li .post .info .glyphicon-comment,
+        #home #savage-posts li .post .info .glyphicon-comment {
+          color: #3DCE3D; }
+        #home #hotest-posts li .post .info .count,
+        #home #hotest-posts li .post .info .date,
+        #home #savage-posts li .post .info .count,
+        #home #savage-posts li .post .info .date {
+          font-size: 1em;
+          color: #7d7d7d; }
+
+#approve-withdraw {
+  padding-top: 15px;
+  background-color: white;
+  margin-top: 45px; }
+  #approve-withdraw .list-group-item {
+    border: none;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 0; }
+
+#create-post-form {
+  margin-top: 45px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding-top: 20px; }
+
+#withdraw {
+  background-color: white;
+  margin-top: 45px;
+  padding: 15px 10px 10px 10px; }
+  #withdraw input {
+    width: 200px; }
+  #withdraw li {
+    background: url(/image/clothing-border-bg.png) repeat-x center bottom;
+    padding: 3px; }
+
+/*# sourceMappingURL=portal.css.map */

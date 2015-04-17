@@ -1,0 +1,15 @@
+<template name="withdrawApprove">
+    <ul id="approve-withdraw" class="list-group">
+    {{#each withdrawals}}
+        <li class="list-group-item">
+            <small>{{formatDate submitted "MM/DD HH:mm"}} </small>
+            {{author}}申请提现<b>{{amount}}</b>元
+            <span class="text-primary">({{message}})</span>
+            {{#if needTransfer}}
+                <button type="button" class="btn btn-primary btn-sm transfered-btn">已转</button>
+                <button type="button" class="btn btn-default btn-sm transfer-failed-btn">转账失败</button>
+            {{/if}}
+        </li>
+    {{/each}}
+    </ul>
+</template>
